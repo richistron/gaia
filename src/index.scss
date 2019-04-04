@@ -1,1 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+
+.page {
+  padding-top: 20px;
+  @extend .container-fluid;
+}
