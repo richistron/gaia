@@ -1,8 +1,11 @@
 import React, {useReducer, useEffect} from 'react';
 import AppContext from './AppContext';
-import reducers from './reducers'
+import reducers from './reducers';
+import {HashRouter as Router, Route} from 'react-router-dom';
+import Home from './components/pages/Home.js';
+import Navigation from './components/organisms/Navigation';
 
-const App = () => { 
+const App = () => {
   const [state, dispatch] = useReducer(reducers, {});
 
   useEffect(() => {
@@ -15,7 +18,13 @@ const App = () => {
         state,
         dispatch,
       }}>
-      <div> new app </div>
+      <Router basename={'/'} >
+        <Navigation />
+
+        <div className={'container'}>
+          <Route path='/' exact component={Home} />
+        </div>
+      </Router>
     </AppContext.Provider>
   );
 };
