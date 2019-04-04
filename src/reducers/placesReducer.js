@@ -1,13 +1,15 @@
 const initialState = {
 };
 
-const placesReducer = (state = null, action = null) => {
+const placesReducer = (state, action) => {
   if (!state) {
     return initialState;
   }
 
-  return {
-  };
+  switch (action.type) {
+    default:
+      return state;
+  }
 };
 
 export default placesReducer;
