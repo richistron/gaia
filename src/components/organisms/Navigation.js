@@ -4,7 +4,6 @@ import {withRouter} from 'react-router';
 import propTypes from 'prop-types';
 
 const Navigation = props => {
-  // initialize routes in ios and android
   useEffect(() => {
     if (!props.location.pathname) {
       props.history.push('/');
@@ -33,4 +32,5 @@ Navigation.propTypes = {
   }).isRequired,
 };
 
+export const TestNavigation = Navigation;
 export default withRouter(Navigation);

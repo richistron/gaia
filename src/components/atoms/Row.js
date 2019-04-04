@@ -1,6 +1,5 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import isArray from '../../lib/isArray.js'
 
 const Row = props => {
   const {cols, children} = props;

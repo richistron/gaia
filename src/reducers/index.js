@@ -1,10 +1,15 @@
 import placesReducer from './placesReducer.js';
 
-const reducers = (state = {}, action = {}) => {
-  return {
-    places: placesReducer(state.places, action),
+export const combineReducers = (reducers = {}) => {
+  return (...args) => {
+    const newState = {};
+    for (let key in reducers) {
+      newState[key] = reducers[key](...args);
+    }
+    return newState;
   };
 };
 
-
-export default reducers;
+export default combineReducers({
+  places: placesReducer,
+});

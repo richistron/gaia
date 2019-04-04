@@ -1,9 +1,14 @@
+import './setupTest.js';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import {shallow} from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it('should have a HashRouter', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('HashRouter').length).toBe(1);
+});
+
+it('should have a Navigation', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('withRouter(Navigation)').length).toBe(1);
 });
