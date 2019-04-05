@@ -2,7 +2,7 @@ import React from 'react';
 import Page from '../atoms/Page.js';
 import {Link} from 'react-router-dom';
 
-const MapPage = props => {
+const HomePage = props => {
   return (
     <Page>
       <div className='jumbotron'>
@@ -18,4 +18,4 @@ const MapPage = props => {
   );
 };
 
-export default MapPage;
+export default HomePage;
