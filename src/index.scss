@@ -4,3 +4,11 @@
   padding-top: 20px;
   @extend .container-fluid;
 }
+
+.gmnoprint, .gm-fullscreen-control{
+  display: none;
+}
+
+.zoom-title {
+  margin-top: 10px;
+}

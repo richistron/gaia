@@ -1,4 +1,5 @@
 import uiReducer from './uiReducer.js';
+import locationReducer from './locationReducer.js';
 
 export const combineReducers = (reducers = {}) => {
   return (state = {}, action = {}) => {
@@ -12,4 +13,5 @@ export const combineReducers = (reducers = {}) => {
 
 export default combineReducers({
   ui: uiReducer,
+  location: locationReducer,
 });

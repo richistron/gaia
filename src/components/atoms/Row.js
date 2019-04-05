@@ -6,21 +6,22 @@ const Row = props => {
     cols,
     children,
     textCenter,
+    className,
   } = props;
   const renderCols = (items = []) => {
     const colSize = Math.floor(12 / (items.length === 0 ? 1 : items.length)); 
     return items.map((item, key) => (
-      <div key={'item-' + key} className={'col-' + colSize}>
+      <div key={'item-' + key} className={'col-' + colSize + ' ' + className}>
         { item }
       </div>
     ));
   };
   return (
-    <div className={`row ${textCenter ? 'text-center' : ''}`}>
+    <div className={`row ${textCenter ? 'text-center' : ''}  ${ className ? className : ''}`}>
       {cols ?
         renderCols(cols)
         : 
-        <div className={'col-12'}>
+        <div className={`col-12 ${className}`}>
           { children }
         </div>
       }
@@ -32,6 +33,7 @@ Row.propTypes = {
   cols: propTypes.array,
   children: propTypes.node,
   textCenter: propTypes.bool,
+  className: propTypes.string,
 };
 
 export default Row;

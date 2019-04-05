@@ -1,6 +1,6 @@
-const zoomVal = 25;
+const zoomVal = 10;
 const initialState = {
-  zoom: zoomVal,
+  zoom: zoomVal * 2,
 };
 
 const uiReducer = (state, action) => {
