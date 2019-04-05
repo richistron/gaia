@@ -21,12 +21,15 @@ const HomePage = props => {
   return (
     <Page>
       <Row>
-        {location.lat && ui.zoom  &&
-          <Gmap 
-            lat={location.lat}
-            lng={location.lng}
-            zoom={ui.zoom / 10 + 8}
-          />
+        {location.lat && ui.zoom
+            ?
+            <Gmap 
+              lat={location.lat}
+              lng={location.lng}
+              zoom={ui.zoom / 10 + 8}
+            />
+            :
+            null
         }
       </Row>
 

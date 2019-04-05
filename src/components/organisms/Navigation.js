@@ -11,7 +11,12 @@ const Navigation = props => {
   }, []);
   return (
     <nav className={'navbar sticky-top navbar-light bg-light'}>
-      <Link className={'navbar-brand'} to={'/'}> Brand </Link>
+      {props.location.pathname === '/'
+        ?
+        <span className='navbar-brand'>Gaia</span>
+        :
+        <Link className={'navbar-brand'} to={'/'}> Gaia </Link>
+      }
       <button
         className={ 'navbar-toggler' }
         type={ 'button'  }
