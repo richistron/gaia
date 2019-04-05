@@ -1,4 +1,5 @@
 import {AppState} from './AppContext';
+import MapPage from './components/pages/MapPage.js';
 import HomePage from './components/pages/HomePage.js';
 import Navigation from './components/organisms/Navigation';
 import React from 'react';
@@ -12,6 +13,7 @@ const App = () => {
 
         <div className={'container'}>
           <Route path='/' exact component={HomePage} />
+          <Route path='/map' exact component={MapPage} />
         </div>
       </Router>
     </AppState>

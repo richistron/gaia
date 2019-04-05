@@ -1,9 +1,9 @@
 import '../../setupTest.js';
 import React from 'react';
 import {shallow} from 'enzyme';
-import HomePage from './HomePage.js';
+import MapPage from './MapPage.js';
 
-it('HomePage smoke test', () => {
-  const wrapper = shallow(<HomePage />);
+it('MapPage smoke test', () => {
+  const wrapper = shallow(<MapPage />);
   expect(wrapper.find('Page').length).toBe(1);
 });
