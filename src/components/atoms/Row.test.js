@@ -17,3 +17,12 @@ it('children', () => {
   const wrapper = shallow(<Row>foo</Row>);
   expect(wrapper.html()).toMatch('foo');
 });
+
+it('render two cols', () => {
+  const wrapper = shallow(<Row cols={[
+    'hi',
+    'there'
+  ]} />);
+  expect(wrapper.html())
+    .toMatch('<div class="row "><div class="col-6">hi</div><div class="col-6">there</div></div>');
+});

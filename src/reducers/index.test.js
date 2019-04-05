@@ -6,10 +6,7 @@ it('combineReducers', () => {
       panchito: action && action.type === 'foo' ? true : false
     })
   });
-  expect(typeof reducers)
-    .toEqual('function');
-  expect(reducers().foo)
-    .toEqual({panchito: false});
-  expect(reducers({}, {type: 'foo'}).foo)
-    .toEqual({panchito: true});
+  expect(typeof reducers).toEqual('function');
+  expect(reducers().foo).toEqual({panchito: false});
+  expect(reducers({}, {type: 'foo'}).foo).toEqual({panchito: true});
 });

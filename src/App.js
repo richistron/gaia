@@ -1,23 +1,12 @@
-import AppContext from './AppContext';
+import {AppState} from './AppContext';
 import HomePage from './components/pages/HomePage.js';
 import Navigation from './components/organisms/Navigation';
-import React, {useReducer, useEffect} from 'react';
-import reducers from './reducers';
+import React from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducers, {});
-
-  useEffect(() => {
-    dispatch({type: '@@INIT'});
-  }, []);
-
   return (
-    <AppContext.Provider
-      value={{
-        state,
-        dispatch,
-      }}>
+    <AppState>
       <Router basename={'/'} >
         <Navigation />
 
@@ -25,7 +14,7 @@ const App = () => {
           <Route path='/' exact component={HomePage} />
         </div>
       </Router>
-    </AppContext.Provider>
+    </AppState>
   );
 };
 
